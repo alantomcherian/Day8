@@ -9,13 +9,14 @@ namespace Day8_1
         public const int EMP_RATE_PER_HOUR = 20;
         public const int NUM_OF_WORKING_DAYS = 20;
         public const int MAX_HRS_PER_MONTH = 100;
-        static void Main(string[] args)
+
+        public static void CalcEmpWage()
         {
             int empHrs = 0;
             int totalWorkingDays = 0;
-            int totalEmpHrs= 0;
+            int totalEmpHrs = 0;
 
-            while(totalEmpHrs <= MAX_HRS_PER_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS)
+            while (totalEmpHrs <= MAX_HRS_PER_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS)
             {
                 totalWorkingDays++;
                 Random random = new Random();
@@ -33,12 +34,16 @@ namespace Day8_1
                         empHrs = 0;
                         break;
                 }
-                
+
                 totalEmpHrs += empHrs;
-                Console.WriteLine("days :"+ totalWorkingDays+" Emp hrs : "+empHrs);
+                Console.WriteLine("days :" + totalWorkingDays + " Emp hrs : " + empHrs);
             }
             int totalEmpWage = totalEmpHrs * EMP_RATE_PER_HOUR;
             Console.WriteLine("Total Emp Wage: " + totalEmpWage);
+        }
+        static void Main(string[] args)
+        {
+            CalcEmpWage();
         }
     }
 }
